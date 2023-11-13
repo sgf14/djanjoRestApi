@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+# Initialise environment variables. protection of sensitive data
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*0yve@e9^w)81h4w1$+=b&b4&2wj2f@$8e4sdw^a0v3s8ozoxx'
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,11 +90,11 @@ DATABASES = {
     
     'default': {
         'ENGINE' : 'django.db.backends.postgresql',  # one video had postgresql_psycopg2.  neither version worked @ makemigrations
-        'NAME' : 'django-store',
-        'USER' : 'postgres',
-        'PASSWORD' : 'admin',
-        'HOST' : 'localhost',
-        'PORT' : '5432',  # .see pgadmin-v15 is 5433. pg11 is not available for psycopg2, but it uses default 5432 on current machine install
+        'NAME' : env('DATABASE_NAME'),
+        'USER' : env('DATABASE_USER'),
+        'PASSWORD' : env('DATABASE_PASS'),
+        'HOST' : env('DATABASE_HOST'),
+        'PORT' : env('DATABASE_PORT'),  # .see pgadmin-v15 is 5433. pg11 is not available for psycopg2, but it uses default 5432 on current machine install
     }
 }
 
