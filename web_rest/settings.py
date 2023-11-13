@@ -85,11 +85,11 @@ DATABASES = {
     
     'default': {
         'ENGINE' : 'django.db.backends.postgresql',  # one video had postgresql_psycopg2.  neither version worked @ makemigrations
-        'NAME' : 'django_store',
+        'NAME' : 'django-store',
         'USER' : 'postgres',
         'PASSWORD' : 'admin',
         'HOST' : 'localhost',
-        'PORT' : '5433',  # .see pgadmin-v15 is 5433. pg11 is not available for psycopg2, but it uses default 5432 on current machine install
+        'PORT' : '5432',  # .see pgadmin-v15 is 5433. pg11 is not available for psycopg2, but it uses default 5432 on current machine install
     }
 }
 
