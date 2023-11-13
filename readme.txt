@@ -7,7 +7,7 @@ to run app:
   -- or-- manual- term cmd = python manage.py runserver   
   then launch a new CLI (external to vscode).  and curl -i http://127.0.0.1:8000/products/   if successful this will return an unformatted response 
   -- or--
-  launch your api consumer [havent built this yet]
+  launch your api consumer [havent built this yet. pending]  https://reintech.io/blog/how-to-use-node-js-to-create-a-rest-client
 
 launch postgres 15:
 un/pwd: postgres, admin. To start use pgadmin4.  to swtich from sqlite (test) to postgres (prod) comment settings.py.
