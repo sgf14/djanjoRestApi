@@ -1,3 +1,4 @@
+# choosintg keeping gitignore itself in repo for reference
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
