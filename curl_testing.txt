@@ -1,0 +1,23 @@
+#curl- manual testing in CLI
+GET/ get one
+curl -i http://127.0.0.1:8000/products/
+curl -i http://127.0.0.1:8000/products/2/
+curl -i http://127.0.0.1:8000/products/3/ -X GET  # you can use this, it works, but is un-neccessary
+--or--
+curl -i http://127.0.0.1:8000/products/ -w '\n' # this end part was in the website- but not seeing what diff it makes, maybe it does in unix/macOs
+
+POST
+# windows cli wont accept single quotes, unlike unix/macos. so you have to use doubles and escape the ones in -d data load.  **MS pwrshell this curl doesnt work at all- some format thing diff, but havne t messed w/ it more
+curl -i http://127.0.0.1:8000/products/ -X POST -H "Content-Type: application/json" -d "{\"part_no\" : \"445-002\", \"product_desc\" : \"Washing Machine\", \"product_cost\" : 570.32}"
+# this is what it would look like otherwise
+curl -i http://127.0.0.1:8000/products/ -X POST -H 'Content-Type: application/json' -d '{"part_no" : "445-002", "product_desc" : "Washing Machine", "product_cost" : 570}'
+
+PUT 
+curl -i http://127.0.0.1:8000/products/1/ -X PUT -H "Content-Type: application/json" -d "{\"part_no\" : \"Rt-123\", \"product_desc\" : \"Silicon Spatula\", \"product_cost\" : 6.34}"
+
+PATCH
+curl -i http://127.0.0.1:8000/products/2/ -X PATCH -H "Content-Type: application/json" -d "{\"product_desc\" : \"Silver Coffee Cup\" }"
+
+DELETE
+curl -i http://127.0.0.1:8000/products/5/ -X DELETE
+# note youll get a HTTP 204 No Content return upon success. vs normal 200 (resource isnt there any longer)
