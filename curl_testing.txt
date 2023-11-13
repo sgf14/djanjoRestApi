@@ -16,7 +16,7 @@ PUT
 curl -i http://127.0.0.1:8000/products/1/ -X PUT -H "Content-Type: application/json" -d "{\"part_no\" : \"Rt-123\", \"product_desc\" : \"Silicon Spatula\", \"product_cost\" : 6.34}"
 
 PATCH
-curl -i http://127.0.0.1:8000/products/2/ -X PATCH -H "Content-Type: application/json" -d "{\"product_desc\" : \"Silver Coffee Cup\" }"
+curl -i http://127.0.0.1:8000/products/3/ -X PATCH -H "Content-Type: application/json" -d "{\"product_desc\" : \"Silver Coffee Cup\" }"
 
 DELETE
 curl -i http://127.0.0.1:8000/products/5/ -X DELETE
