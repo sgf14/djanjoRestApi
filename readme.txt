@@ -27,3 +27,10 @@ then python manage.py migrate
 
 django- project = web_rest
        app = store_api
+
+new venv / py 9/ pip install summary- quick ref:
+Django djangorestframework
+pyscopg2
+django-environ
+
+test note
